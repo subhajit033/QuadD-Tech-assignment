@@ -6,6 +6,3 @@
 4. Run `npm run dev` to start the development server.
 5. open `http://localhost:5173/` in browser
 
-## Using docker
-1. Start Docker Engine First
-2. Run `docker run -p 3000:3000 subhajit033/leadlly`
