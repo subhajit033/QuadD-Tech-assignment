@@ -5,17 +5,23 @@ import { addTodo } from '../redux/slices/tasks';
 import { setToast } from '../redux/slices/toastNotify';
 
 const TaskInput = () => {
+  //useDispath hook is used to update  the data in redux store by performing respective actions
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
 
   const addTasks = () => {
     if (!message) {
       dispatch(
+        //notify user that empty todo is cannot be added
         setToast({ type: 'error', message: 'Empty task cannot be added' })
       );
       return;
     }
+
+    //To add the todo in redux
     dispatch(addTodo({ message, done: false }));
+    //notify user that the todo is successfully added
+
     dispatch(setToast({ type: 'success', message: 'Task added successfully' }));
   };
   return (
