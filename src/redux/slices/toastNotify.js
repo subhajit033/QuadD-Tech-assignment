@@ -1,17 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 
 const toastSlice = createSlice({
   name: 'toast',
   initialState: {
-    toast: {
+    toastType: {
       type: '',
       message: '',
     },
   },
   reducers: {
     setToast: (state, action) => {
-      state.toast = { ...action.payload };
+      state.toastType = { ...action.payload };
     },
   },
 });

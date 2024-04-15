@@ -4,20 +4,35 @@ import TaskInput from '../components/TaskInput';
 import TaskList from '../components/TaskList';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
 
 const LayOut = () => {
+  const toastType = useSelector((store) => store.toast.toastType);
   useEffect(() => {
-    toast.success('jkfhjfn', {
-      position: 'top-center',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-    });
-  }, []);
+    if (toastType.type === 'success') {
+      toast.success(toastType.message, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      });
+    } else if (toastType.type === 'error') {
+      toast.error(toastType.message, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      });
+    }
+  }, [toastType]);
 
   return (
     <div className='container'>
