@@ -8,11 +8,15 @@ import { useSelector } from 'react-redux';
 
 const LayOut = () => {
   const toastType = useSelector((store) => store.toast.toastType);
+
+  //show toast notification on the ui , i have written this code in this way because, I don't want to write the same code again and again , otherwise I have to write this code at every place where I want to show notification
+
+  
   useEffect(() => {
     if (toastType.type === 'success') {
       toast.success(toastType.message, {
         position: 'top-center',
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -23,7 +27,7 @@ const LayOut = () => {
     } else if (toastType.type === 'error') {
       toast.error(toastType.message, {
         position: 'top-center',
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

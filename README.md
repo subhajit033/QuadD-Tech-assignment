@@ -1,8 +1,11 @@
-# React + Vite
+## Installation and Usage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone this repository to your local machine using command `git clone https://github.com/subhajit033/QuadD-Tech-assignment.git`
+2. Run `cd QuadD-Tech-assignment` to move into the folder.
+3. Run `npm install` to install the necessary dependencies.(make sure that node js is installed in your machine)
+4. Run `npm run dev` to start the development server.
+5. open `http://localhost:5173/` in browser
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Using docker
+1. Start Docker Engine First
+2. Run `docker run -p 3000:3000 subhajit033/leadlly`
